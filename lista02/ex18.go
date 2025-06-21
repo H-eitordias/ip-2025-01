@@ -14,14 +14,11 @@ func main() {
 	fmt.Print("Preço normal do DVD: R$ ")
 	fmt.Scanln(&preco)
 	fmt.Print("Tipo do DVD (comum ou lancamento): ")
-	fmt.Scanln(&tipo)
 
-	// Desconto por dia
 	if dia == 2 || dia == 3 || dia == 5 {
 		preco *= 0.60
 	}
 
-	// Acréscimo por tipo
 	if tipo == "lancamento" {
 		preco *= 1.15
 	}
