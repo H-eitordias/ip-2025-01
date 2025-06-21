@@ -11,7 +11,6 @@ func main() {
 
 	var menor, inter, maior int
 
-	// Comparações para definir a ordem
 	if a < b && a < c {
 		menor = a
 		if b < c {
