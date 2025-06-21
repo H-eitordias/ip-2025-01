@@ -21,21 +21,19 @@ func main() {
 		fmt.Scanln(&altura)
 	}
 
-	switch opcao {
-	case 1: // Cone
-		volume := (math.Pi * math.Pow(raio, 2) * altura) / 3
-		area := math.Pi * raio * math.Sqrt(math.Pow(raio, 2)+math.Pow(altura, 2))
-		fmt.Printf("Volume: %.2f\nÁrea: %.2f\n", volume, area)
-	case 2: // Cilindro
-		volume := math.Pi * math.Pow(raio, 2) * altura
-		area := 2 * math.Pi * raio * altura
-		fmt.Printf("Volume: %.2f\nÁrea: %.2f\n", volume, area)
-	case 3: // Esfera
-		volume := (4.0 / 3.0) * math.Pi * math.Pow(raio, 3)
-		area := 4 * math.Pi * math.Pow(raio, 2)
-		fmt.Printf("Volume: %.2f\nÁrea: %.2f\n", volume, area)
-	default:
+	if opcao == 1 { 
+		v := math.Pi * raio * raio * altura / 3
+		a := math.Pi * raio * math.Sqrt(raio*raio+altura*altura)
+		fmt.Printf("Cone - Volume: %.2f, Área: %.2f\n", v, a)
+	} else if opcao == 2 {
+		v := math.Pi * raio * raio * altura
+		a := 2 * math.Pi * raio * altura
+		fmt.Printf("Cilindro - Volume: %.2f, Área: %.2f\n", v, a)
+	} else if opcao == 3 { 
+		v := 4 * math.Pi * math.Pow(raio, 3) / 3
+		a := 4 * math.Pi * raio * raio
+		fmt.Printf("Esfera - Volume: %.2f, Área: %.2f\n", v, a)
+	} else {
 		fmt.Println("Opção inválida.")
 	}
 }
-
